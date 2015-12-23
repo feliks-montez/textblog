@@ -22,6 +22,10 @@ group :development, :test do
   gem 'capistrano-rails'
 end
 
+group :production do
+  gem 'pg'
+end
+
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
