@@ -1,0 +1,8 @@
+<article>
+  <p class="date"><%= post.created_at.strftime("%d %B. %Y") %></p>
+  <h1><%= post.heading %></h1>
+  <div class="author-byline">
+    <span>By <a href="#">Diam Tempor</a></span>
+  </div>
+  <p><%= post.body %></p>
+</article>

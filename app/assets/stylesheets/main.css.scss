@@ -1,0 +1,197 @@
+* {
+  visibility: visible;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #111;
+}
+
+ul, ol { 
+  list-style: none;
+}
+
+nav ul, nav ol {
+  padding: 0;
+}
+
+a {
+  color: #3366ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-indent: 3em;
+  margin-bottom: 1em;
+}
+
+li {
+  text-align: -webkit-match-parent;
+}
+
+article {
+  margin: 4em 0;
+}
+
+article .date {
+  color: #aaa;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-indent: 0;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+article h1 {
+  margin: 0 0 0.25em 0;
+  font-size: 2.4em;
+}
+
+blockquote {
+  padding-left: 1em;
+  margin-bottom: 1em;
+  border-left: .3em solid #ccc;
+  font-style: italic;
+}
+
+blockquote p {
+  text-indent: 0;
+}
+
+img.btn-nav {
+  max-height: 3em;
+}
+
+#logo-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1em 0;
+  text-align: left;
+}
+
+#giant-brand {
+  float: left;
+  font-size: 4em;
+  line-height: 3em;
+  margin: 0;
+  text-align: left;
+}
+
+#menu-toggle {
+  float: right;
+  display: none;
+}
+
+#header-main {
+  background: #eee;
+  margin-bottom: 1em;
+}
+
+#nav-main {
+  background: #222;
+  color: #eee;
+  z-index: 3;
+}
+
+#nav-main a {
+  display: block;
+  color: #eee;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+#nav-main > ul {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+#nav-main > ul > li {
+  float: left;
+}
+
+#nav-main > ul > li:hover > a {
+  color: #6699ff;
+}
+
+#nav-main li ul {
+  display: none;
+  position: absolute;
+  background: #eee;
+  width: inherit;
+  min-width: 95%;
+}
+
+#nav-main li:hover ul {
+  display: block;
+  background: #222;
+}
+
+#nav-main li ul li:hover {
+  background: #333;
+}
+
+#wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.author-byline {
+  box-sizing: border-box;
+  background: url(image_path('5x5-grey-diag.png'));
+  margin-bottom: 1em;
+}
+
+.author-byline span {
+  text-transform: uppercase;
+  background: #fff;
+  padding: 3px 20px 3px 0;
+  font-weight: 700;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+div.vcenter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+h1.vcenter {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+p.vcenter {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}

@@ -1,0 +1,7 @@
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= render 'post', data: post %>
+    </li>
+  <% end %>
+</ul>
