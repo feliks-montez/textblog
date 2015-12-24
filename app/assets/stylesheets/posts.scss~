@@ -1,0 +1,14 @@
+.about-author {
+  max-width: 480px;
+  float: right;
+  background: #eee;
+  
+  h3 {
+    margin-bottom: 1em;
+  }
+  
+  > div {
+    float: left;
+    margin-right: 1em;
+  }
+}

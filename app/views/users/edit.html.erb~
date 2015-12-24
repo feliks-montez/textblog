@@ -1,0 +1,16 @@
+<h1>Edit Profile</h1>
+<%= form_for @user, multipart: true do |f| %>
+  <%= f.label :email %><br>
+  <%= f.email_field :email %><br>
+  
+  <%= f.label 'First name' %><br>
+  <%= f.text_field :fname %><br>
+  
+  <%= f.label 'Last name' %><br>
+  <%= f.text_field :lname %><br>
+  
+  <%= f.label :avatar %><br>
+  <%= f.file_field :avatar %><br>
+  
+  <%= f.submit 'Update!' %>
+<% end %>
