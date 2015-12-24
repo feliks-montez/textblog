@@ -1,6 +1,6 @@
 <header id="header-main">
   <div id="logo-container" class="clearfix">
-    <h1 id="giant-brand" class="">Text Blog</h1>
+    <%= link_to root_path do %><h1 id="giant-brand" class="">Text Blog</h1><% end %>
     <div id="menu-toggle">
       <%= image_tag 'menu-black.png', class: 'btn-nav' %>
     </div>
@@ -25,22 +25,23 @@
         </ul>
       </li>
       
-      <li class="has-drop-nav">
-        <a href="#">molestie</a>
-        <ul class="drop-nav">
-          <li class="first"><a href="#" class="first">vehicula</a></li>
-          <li class=""><a href="#" class="">feugiat</a></li>
-          <li class="last"><a href="#" class="last">justo</a></li>
-        </ul>
-      </li>
+      <% if current_user.author %>
+        <li class="has-drop-nav">
+          <%= link_to 'New Post', new_post_path %>
+        </li>
+      <% end %>
       
       <li class="has-drop-nav">
-        <a href="http://www.harvard.edu/on-campus">viverra</a>
-        <ul class="drop-nav">
-          <li class="first"><a href="#" class="first">neque</a></li>
-          <li class=""><a href="#" class="">Curabitur</a></li>
-          <li class="last"><a href="#" class="last">tortor</a></li>
-        </ul>
+        <% if signed_in? %>
+          <%= link_to 'My Profile', current_user %>
+          <ul class="drop-nav">
+            <li class="first"><a href="#" class="first">neque</a></li>
+            <li class=""><a href="#" class="">Curabitur</a></li>
+            <li class="last"><%= link_to 'Sign Out', signout_path %></li>
+          </ul>
+        <% else %>
+          <%= link_to 'Sign In', signin_path %>
+        <% end %>
       </li>
     </ul>
   </nav>

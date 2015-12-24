@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><% if @user.fname or @user.lname %><%= @user.fname + ' ' + @user.lname + '\'s ' %><% end %>Profile</h1>
+<% if @user.uuid == current_user.uuid %>
+  <%= link_to 'Edit Profile', edit_user_path(@user) %>
+<% end %>
+<p>Email: <%= @user.email %></p>
+<p>Name: <%= @user.fname %> <%= @user.lname %></p>
+<% if @user.avatar_url() %>
+  <%= image_tag @user.avatar_url(:medium) %>
+<% end %>
+<p>About me: <%= @user.description %></p>

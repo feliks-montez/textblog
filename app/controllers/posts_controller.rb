@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(params.require(:post).permit(:heading,:body))
+    @post.user = User.find(1)
     if @post.save
       redirect_to posts_path
     else
@@ -42,7 +43,7 @@ class PostsController < ApplicationController
     Gmail.connect('feliks.montez', 'Inten$1ty()') do |gmail|
       gmail.inbox.find(:unread).each do |email|
         email.read!
-        if email.subject =~ /SMS/
+        if email.subject =~ /SMS/ or email.subject =~ /voicemail/
           @emails << email
         end
       end
@@ -56,7 +57,7 @@ class PostsController < ApplicationController
       author = email.from[0].name.chomp
       body = email.body.decoded.gsub(/[\w\W]*Content-Type:\stext\/plain.*?\n\n/, '').gsub(/\n\n--[\w\W]*--/, '').chomp
       heading, body = body.split('*body*')
-      @post = Post.create(heading: heading, body: body)
+      @post = Post.create(heading: heading, body: body, user_id: 1)
     end
   end
 end

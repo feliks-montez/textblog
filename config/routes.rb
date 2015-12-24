@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   root 'posts#index'
   
+  get 'signin' => 'sessions#new', as: 'signin'
+  post 'sessions' => 'sessions#create', as: 'sessions'
+  get 'signup' => 'users#new', as: 'signup'
+  get 'signout' => 'sessions#destroy', as: 'signout'
+  
   resources :users
   resources :posts
 

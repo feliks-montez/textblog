@@ -30,9 +30,13 @@ a:hover {
   text-decoration: underline;
 }
 
-p {
+article p {
   text-indent: 3em;
   margin-bottom: 1em;
+}
+
+p.no-indent {
+  
 }
 
 li {
@@ -85,6 +89,7 @@ img.btn-nav {
   line-height: 3em;
   margin: 0;
   text-align: left;
+  color: #222;
 }
 
 #menu-toggle {
@@ -155,7 +160,7 @@ img.btn-nav {
 .author-byline span {
   text-transform: uppercase;
   background: #fff;
-  padding: 2px 20px 2px 0;
+  padding: 3px 20px 3px 0;
   font-weight: 700;
   font-size: 0.8em;
   letter-spacing: 1px;

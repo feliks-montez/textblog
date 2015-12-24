@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222023632) do
+ActiveRecord::Schema.define(version: 20151224025359) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20151222023632) do
     t.string   "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,6 +34,12 @@ ActiveRecord::Schema.define(version: 20151222023632) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "uuid"
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "avatar"
+    t.boolean  "author"
+    t.string   "description"
   end
 
 end

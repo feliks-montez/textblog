@@ -30,9 +30,13 @@ a:hover {
   text-decoration: underline;
 }
 
-p {
+article p {
   text-indent: 3em;
   margin-bottom: 1em;
+}
+
+p.no-indent {
+  text-indent: 0em;
 }
 
 li {
@@ -85,6 +89,7 @@ img.btn-nav {
   line-height: 3em;
   margin: 0;
   text-align: left;
+  color: #222;
 }
 
 #menu-toggle {

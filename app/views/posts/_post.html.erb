@@ -1,8 +1,15 @@
-<article>
+<article class="clearfix">
   <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
   <h1><%= post.heading %></h1>
   <div class="author-byline">
-    <span>By <a href="#">Diam Tempor</a></span>
+    <span>By <%= link_to post.user.fname+' '+post.user.lname, post.user %></span>
   </div>
   <p><%= post.body %></p>
+  <div class="about-author">
+    <h3>About the Author</h3>
+    <div>
+      <%= image_tag post.user.avatar_url(:small) %>
+    </div>
+    <p class="no-indent"><%= link_to post.user.fname+' '+post.user.lname, post.user %> - <%= post.user.description %></p>
+  </div>
 </article>
