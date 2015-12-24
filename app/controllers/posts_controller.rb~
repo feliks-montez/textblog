@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :check_emails, only: :index
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   def index
     @posts = Post.all
@@ -55,9 +55,15 @@ class PostsController < ApplicationController
   def process_emails(emails)
     emails.each do |email|
       author = email.from[0].name.chomp
-      body = email.body.decoded.gsub(/[\w\W]*Content-Type:\stext\/plain.*?\n\n/, '').gsub(/\n\n--[\w\W]*--/, '').chomp
-      heading, body = body.split('*body*')
-      @post = Post.create(heading: heading, body: body)
+      number = author.gsub(/\D/, '')
+      if number.length == 10
+        @user = User.find_by(phone_number: number)
+        if @user && @user.author
+          body = email.body.decoded.gsub(/[\w\W]*Content-Type:\stext\/plain.*?\n\n/, '').gsub(/\n\n--[\w\W]*--/, '').chomp
+          heading, body = body.split('*body*')
+          @post = Post.create(heading: heading, body: body, user_id: @user.id)
+    d    en
+      end
     end
   end
 end

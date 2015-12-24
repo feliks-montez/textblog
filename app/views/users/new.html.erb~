@@ -6,6 +6,9 @@
   <%= f.label 'First name' %><br>
   <%= f.text_field :fname %><br>
   
+  <%= f.label 'Mobile phone' %><br>
+  <%= f.text_field :mobile_number %><br>
+  
   <%= f.label 'Last name' %><br>
   <%= f.text_field :lname %><br>
   

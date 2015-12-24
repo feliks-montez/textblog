@@ -72,6 +72,11 @@ blockquote p {
   text-indent: 0;
 }
 
+textarea {
+  width: 100%;
+  height: 5em;
+}
+
 img.btn-nav {
   max-height: 3em;
 }
@@ -187,6 +192,11 @@ p.vcenter {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+.avatar {
+  float: left;
+  margin-right: 1em;
 }
 
 .clearfix:before,

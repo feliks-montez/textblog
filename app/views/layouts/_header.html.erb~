@@ -9,11 +9,6 @@
     <ul class="clearfix">
       <li class="has-drop-nav">
         <a href="#" class="">sit</a>
-        <!--<ul class="drop-nav">
-          <li class="first"><a href="#" class="first">amet</a></li>
-          <li class="last"><a href="#" class="last">consectetur</a></li>
-          <li class="last"><a href="#" class="last">turpis</a></li>
-        </ul>-->
       </li>
       
       <li class="has-drop-nav">
@@ -25,11 +20,11 @@
         </ul>
       </li>
       
-      <li class="has-drop-nav">
-        <% if current_user.author %>
+      <% if current_user.author %>
+        <li class="has-drop-nav">
           <%= link_to 'New Post', new_post_path %>
-        <% end %>
-      </li>
+        </li>
+      <% end %>
       
       <li class="has-drop-nav">
         <% if signed_in? %>

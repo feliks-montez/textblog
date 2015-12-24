@@ -2,13 +2,17 @@
   max-width: 480px;
   float: right;
   background: #eee;
+  padding: 1em;
   
   h3 {
     margin-bottom: 1em;
   }
   
-  > div {
-    float: left;
-    margin-right: 1em;
+  > div.avatar {
+    
   }
+}
+
+#post_heading {
+  width: 50%;
 }

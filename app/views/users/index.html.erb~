@@ -1,6 +1,7 @@
 <h1>Users</h1>
 <ul>
   <% @users.each do |user| %>
+    <% if user.email %>
     <li>
       <%= image_tag user.avatar_url(:thumb) %>
       <%= link_to user.email, user %>
