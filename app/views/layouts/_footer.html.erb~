@@ -1,0 +1,12 @@
+<footer id="footer-main">
+  <div>
+    <%= image_tag 'Zygarde.png' %>
+    <section>
+    <ul>
+      <li><%= link_to 'Posts', posts_path %></li>
+      <li><%= link_to 'Users', users_path %></li>
+      <li><%= link_to 'Sign In', signin_path %></li>
+    </ul>
+  </section>
+  </div>
+</footer>

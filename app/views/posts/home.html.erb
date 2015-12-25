@@ -1,0 +1,14 @@
+<%= render 'post', post: @post if @post %>
+
+<% content_for :aside do %>
+  <aside id="aside-main">
+    <h2>Latest Posts</h2>
+    <ul>
+      <% @posts.each do |post| %>
+        <li>
+          <%= link_to post do %><h3><%= post.heading %></h3><% end %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
