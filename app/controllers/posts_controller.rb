@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :check_emails, only: :index
+  before_action :check_emails, only: [:home, :index]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   def home
