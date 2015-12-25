@@ -2,6 +2,11 @@ class PostsController < ApplicationController
   before_action :check_emails, only: :index
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   
+  def home
+    @post = Post.first
+    @posts = Post.limit(5)
+  end
+  
   def index
     @posts = Post.all
   end

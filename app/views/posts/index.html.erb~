@@ -1,9 +1,14 @@
-<h1>Newest Posts<h1>
+<h1>Newest Posts</h1>
 
-<ul>
+<ul class="">
   <% @posts.each do |post| %>
     <li>
       <%= render 'post', post: post %>
+      <!--<p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+      <%= link_to post do %>
+        <h2><%= post.heading %></h2>
+      <% end %>
+      <p class="indent">By <%= link_to post.user.fname+' '+post.user.lname, post.user %></p>-->
     </li>
   <% end %>
 </ul>

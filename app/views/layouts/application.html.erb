@@ -10,7 +10,13 @@
   <%= render 'layouts/header' %>
   
   <div id="wrapper">
-    <%= yield %>
+    <section id="section-main">
+      <%= yield %>
+    </section>
+    
+    <%= yield :aside %>
   </div>
+  
+  <%= render 'layouts/footer' %>
 </body>
 </html>

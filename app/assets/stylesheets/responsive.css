@@ -54,7 +54,7 @@
 
 @media screen and (min-width: 50em) {
   #nav-main > ul > li:first-child > a {
-    padding-left: 0;
+    /*padding-left: 0;*/
   }
 }
 
