@@ -1,4 +1,4 @@
-$background-color: #6f3;
+$background-color: #fff;
 $primary-color: #3366ff;
 $secondary-color: #3366ff;
 $light-color: #eee;
@@ -19,6 +19,7 @@ $darker-color: #111;
 body {
   color: $dark-color;
   background: $background-color;
+  font-family: 'Times New Roman';
 }
 
 ul, ol { 
