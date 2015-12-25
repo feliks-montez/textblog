@@ -14,7 +14,7 @@ gem 'therubyracer'
 gem 'bootstrap-sass'
 
 gem 'bcrypt', '~> 3.1.7'
-#gem 'puma'
+gem 'puma'
 gem 'mail'
 gem 'gmail'
 gem 'rmagick'
