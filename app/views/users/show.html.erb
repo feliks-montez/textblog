@@ -1,10 +1,7 @@
 <h1>
-  <% if @user.fname or @user.lname %>
-    <%= @user.fname + ' ' + @user.lname + '\'s' %>
-  <% end %>
-  Profile | 
+  <%= @user.name + '\'s' %> Profile 
   <% if @user.uuid == current_user.uuid %>
-    <%= link_to 'Edit', edit_user_path(@user) %>
+    | <%= link_to 'Edit', edit_user_path(@user) %>
   <% end %>
 </h1>
 <div class="avatar">
@@ -13,6 +10,6 @@
   <% end %>
 </div>
 <p>Email: <%= @user.email %></p>
-<p>Name: <%= @user.fname %> <%= @user.lname %></p>
+<p>Name: <%= @user.name %></p>
 <p>Phone number: <%= number_to_phone(@user.phone_number, area_code: true) %></p>
 <p>About me: <%= @user.description %></p>

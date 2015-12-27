@@ -1,0 +1,9 @@
+<%= form_for post.comments.new do |f| %>
+  <%= f.hidden_field :post_id, value: post.id %>
+  <%= f.hidden_field :comment_id, value: post.id %>
+
+  <%= f.label 'Comment' %>
+  <%= f.text_area :body %>
+  
+  <%= f.submit 'Comment!' %>
+<% end %>

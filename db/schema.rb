@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151224164121) do
+ActiveRecord::Schema.define(version: 20151226030142) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
 
   create_table "posts", force: :cascade do |t|
     t.string   "heading"
@@ -35,12 +39,11 @@ ActiveRecord::Schema.define(version: 20151224164121) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "uuid"
-    t.string   "fname"
-    t.string   "lname"
     t.string   "avatar"
     t.boolean  "author"
     t.string   "description"
     t.string   "phone_number"
+    t.string   "name"
   end
 
 end

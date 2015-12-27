@@ -4,11 +4,17 @@ Rails.application.routes.draw do
   
   get 'signin' => 'sessions#new', as: 'signin'
   post 'sessions' => 'sessions#create', as: 'sessions'
-  get 'signup' => 'users#new', as: 'signup'
   get 'signout' => 'sessions#destroy', as: 'signout'
   
+  get 'signup' => 'users#new', as: 'signup'
+  
   resources :users
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+  resources :comments do
+    resources :comments
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

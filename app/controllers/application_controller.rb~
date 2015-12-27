@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
     cookies.permanent[:user_uuid] = SecureRandom.uuid
     @anon_user = User.new(uuid: cookies[:user_uuid])
     @anon_user.save(validate: false)
+    @anon_user.name = "Guest "+@anon_user.id
+    @anon_user.save(validate: false)
   end
   
   def sign_in(user)

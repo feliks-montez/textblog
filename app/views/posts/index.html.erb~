@@ -1,5 +1,3 @@
-<h1>Newest Posts</h1>
-
 <ul class="">
   <% @posts.each do |post| %>
     <li>

@@ -3,14 +3,14 @@
   <%= f.label :email %>*<br>
   <%= f.email_field :email %><br>
   
-  <%= f.label 'First name' %><br>
-  <%= f.text_field :fname %><br>
-  
-  <%= f.label 'Mobile phone' %><br>
-  <%= f.text_field :mobile_number %><br>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
   
   <%= f.label 'Last name' %><br>
   <%= f.text_field :lname %><br>
+  
+  <%= f.label :phone_number %><br>
+  <%= f.text_field :phone_number %><br>
   
   <%= f.label :avatar %><br>
   <%= f.file_field :avatar %><br>

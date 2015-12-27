@@ -9,7 +9,7 @@
   <%= f.label 'Last name' %><br>
   <%= f.text_field :lname %><br>
   
-  <%= f.label 'Phone number' %><br>
+  <%= f.label :phone_number %><br>
   <%= f.text_field :phone_number %><br>
   
   <%= f.label :avatar %><br>

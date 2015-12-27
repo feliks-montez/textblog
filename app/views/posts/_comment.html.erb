@@ -1,0 +1,24 @@
+<div class="avatar">
+  <% if comment.user.avatar_url %>
+    <%= image_tag comment.user.avatar_url(:thumb) %>
+  <% else %>
+    <%= image_tag 'default-avatar.png' %>
+  <% end %>
+</div>
+<div class="comment-main flex">
+  <%= link_to comment.user.name, comment.user, class: 'primary-color' %>&nbsp;-&nbsp;<%= timeago(comment.created_at) %><br>
+  <div class="comment-body">
+    <%= comment.body %>
+  </div>
+  <div class="comment-options">
+    <%= link_to 'Reply', '#', class: 'grey reply' %>
+  </div>
+  
+  <ul class="replies">
+  <% comment.comments.each do |reply| %>
+    <li>
+      <%= render 'comment', comment: reply %>
+    </li>
+  <% end %>
+</ul>
+</div>

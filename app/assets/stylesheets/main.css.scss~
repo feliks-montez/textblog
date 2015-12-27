@@ -2,6 +2,7 @@ $background-color: #fff;
 $primary-color: #3366ff;
 $secondary-color: #3366ff;
 $light-color: #eee;
+$grey: #aaa;
 $dark-color: #222;
 $darker-color: #111;
 
@@ -19,7 +20,7 @@ $darker-color: #111;
 body {
   color: $dark-color;
   background: $background-color;
-  font-family: 'Times New Roman';
+  font-family: 'Ariel';
 }
 
 ul, ol { 
@@ -48,6 +49,10 @@ a h2:hover {
   text-decoration: none;
 }
 
+section {
+  margin-top: 1em;
+}
+
 article p {
   text-indent: 3em;
   margin-bottom: 1em;
@@ -62,12 +67,17 @@ article:not(:first-child) {
 }
 
 article .date {
-  color: #aaa;
+  color: $grey;
   font-size: 1.1em;
   font-weight: bold;
   text-indent: 0;
   letter-spacing: -1px;
   margin: 0;
+}
+
+.timeago {
+  color: $grey;
+  font-size: 0.8em;
 }
 
 article h1 {
@@ -89,6 +99,22 @@ blockquote p {
 textarea {
   width: 100%;
   height: 5em;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+input[type='submit'], input[type='button'] {
+  padding: 0.5em;
+  background: $primary-color;
+  color: $light-color;
+  border-radius: 4px;
+  border: 0;
+  font-weight: bold;
+  margin: 1em 0 0 0;
+  
+  .btn-lg {
+    font-size: 2em;
+  }
 }
 
 ul.alt-bg {
@@ -141,7 +167,7 @@ p.no-indent {
 
 #nav-main {
   background: $dark-color;
-  color: #eee;
+  color: $light-color;
   z-index: 3;
 }
 
@@ -272,6 +298,46 @@ p.no-indent {
   letter-spacing: 1px;
 }
 
+.primary-color {
+  color: $primary-color;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+.grey {
+  color: $grey;
+}
+
+.flex {
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+}
+
+.col {
+  display: flex;
+  flex-flow: column;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.boxsizing-border {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
 div.vcenter {
   position: absolute;
   top: 0;
@@ -296,8 +362,21 @@ p.vcenter {
 }
 
 .avatar {
-  float: left;
-  margin-right: 1em;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 4px;
+  
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+  }
 }
 
 .clearfix:before,

@@ -4,7 +4,7 @@
     <% if user.email %>
       <li>
         <%= image_tag user.avatar_url(:thumb) %>
-        <%= link_to user.email, user %>
+        <%= link_to user.name, user %>
       </li>
     <% end %>
   <% end %>

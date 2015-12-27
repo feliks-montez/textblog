@@ -1,0 +1,6 @@
+$(document).on("ready page:load", function() {
+  $('a.reply').click(function(evt) {
+    evt.preventDefault();
+    //$(this).parent().parent().parent().parent().find('.replies').prepend("<li><div class='avatar'><% if signed_in? %><%= image_tag current_user.avatar_url(:thumb) %><% else %><%= image_tag 'default-avatar.png' %><% end %></div><div class='comment-main flex'><%#= form_for Comment.new do |f| %><%#= hidden_field_tag :comment_id, comment.id %><%#= f.text_area :body, placeholder: 'Join the discussion...', class: 'boxsizing-border' %><%#= f.submit 'Go! >>', class: 'left' %><%# end %></ul></div></li>");
+  });
+});
