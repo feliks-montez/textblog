@@ -66,6 +66,7 @@ class PostsController < ApplicationController
         if @user && @user.author
           body = email.body.decoded.gsub(/[\w\W]*Content-Type:\stext\/plain.*?\n\n/, '').gsub(/\n\n--[\w\W]*--/, '').chomp
           heading, body = body.split('*body*')
+          
           @post = Post.create(heading: heading, body: body, user_id: @user.id)
         end
       end

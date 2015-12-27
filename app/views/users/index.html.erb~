@@ -2,8 +2,10 @@
 <ul>
   <% @users.each do |user| %>
     <% if user.email %>
-      <li>
-        <%= image_tag user.avatar_url(:thumb) %>
+      <li class="row">
+        <div class="avatar">
+          <%= image_tag user.avatar_url(:thumb) %>
+        </div>
         <%= link_to user.name, user %>
       </li>
     <% end %>

@@ -4,12 +4,16 @@
     | <%= link_to 'Edit', edit_user_path(@user) %>
   <% end %>
 </h1>
-<div class="avatar">
-  <% if @user.avatar_url() %>
-    <%= image_tag @user.avatar_url(:medium) %>
-  <% end %>
+<div class="row">
+  <div class="avatar avatar-lg left">
+    <% if @user.avatar_url() %>
+      <%= image_tag @user.avatar_url(:medium) %>
+    <% end %>
+  </div>
+  <p class="left">
+    Email: <%= @user.email %><br>
+    Name: <%= @user.name %><br>
+    Phone number: <%= number_to_phone(@user.phone_number, area_code: true) %><br>
+    About me: <%= @user.description %>
+  </p>
 </div>
-<p>Email: <%= @user.email %></p>
-<p>Name: <%= @user.name %></p>
-<p>Phone number: <%= number_to_phone(@user.phone_number, area_code: true) %></p>
-<p>About me: <%= @user.description %></p>

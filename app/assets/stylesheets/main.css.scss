@@ -366,6 +366,7 @@ p.vcenter {
   height: 50px;
   overflow: hidden;
   border-radius: 4px;
+  margin-right: 1em;
   
   img {
     position: absolute;
@@ -377,6 +378,12 @@ p.vcenter {
         -ms-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
   }
+}
+
+.avatar-lg {
+  width: 200px;
+  min-width: 200px;
+  height: 200px;
 }
 
 .clearfix:before,

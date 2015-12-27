@@ -61,6 +61,7 @@ class PostsController < ApplicationController
     emails.each do |email|
       author = email.from[0].name.chomp
       number = author.gsub(/\D/, '')
+      byebug
       if number.length == 10
         @user = User.find_by(phone_number: number)
         if @user && @user.author

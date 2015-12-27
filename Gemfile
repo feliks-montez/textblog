@@ -18,6 +18,7 @@ gem 'mail'
 gem 'gmail'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'carrierwave-dropbox'
 
 group :development, :test do
   gem 'sqlite3'
