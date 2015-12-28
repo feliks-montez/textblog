@@ -12,6 +12,6 @@
     </div>
     <p class="no-indent"><%= link_to post.user.name, post.user %> - <%= post.user.description %></p>
   </div>
-  <% logger.debug post.id %>
+  
   <%= render 'comments', post: post %>
 </article>

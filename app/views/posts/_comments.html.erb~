@@ -10,12 +10,6 @@
         <% end %>
       </div>
       <div class="comment-main flex">
-        <%#= form_tag post_comments_path(post), class: 'row' do %>
-          <%#= text_area_tag :body, '', placeholder: "Join the discussion..." %>
-          
-          <%#= submit_tag 'Comment!' %>
-        <%# end %>
-        
         <%= form_for Comment.new do |f| %>
           <%= hidden_field_tag :post_id, post.id %>
           
@@ -26,9 +20,22 @@
       </div>
     </li>
     <% post.comments.each do |comment| %>
-      <li class="col">
+      <li class="row">
         <%= render 'comment', comment: comment %>
       </li>
     <% end %>
   </ul>
+  
+  <script type="text/javascript">
+    $('a.reply').click(function(evt) {
+      evt.preventDefault();
+      var comment_id = $(this).parent().parent().find('.comment_id').attr('value');
+      var data = "<%= escape_javascript(render :partial => 'comments/reply') %>";
+      $($(this).parent().parent().find('.replies')[0]).prepend(data);
+      $($(this).parent().parent().find('.replies')[0]).find('input[name="comment_id"]');
+      $(data).find('input[name="comment_id"]').attr('value', comment_id);
+      alert(data);
+      $($(this).parent().parent().find('.replies')[0]).prepend(data);
+    });
+  </script>
 </section>

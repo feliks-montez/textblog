@@ -14,4 +14,4 @@
   </div>
   <% logger.debug post.id %>
   <%= render 'comments', post: post %>
-</article
+</article>

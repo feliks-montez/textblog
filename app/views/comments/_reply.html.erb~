@@ -1,0 +1,18 @@
+<li class="row">
+  <div class="avatar">
+    <% if signed_in? %>
+      <%= image_tag current_user.avatar_url(:thumb) %>
+    <% else %>
+      <%= image_tag 'default-avatar.png' %>
+    <% end %>
+  </div>
+  <div class="comment-main flex">
+    <%= form_for Comment.new do |f| %>
+      <%= hidden_field_tag :comment_id, 1 %>
+      
+      <%= f.text_area :body, placeholder: "Join the discussion...", class: 'boxsizing-border' %>
+      
+      <%= f.submit 'Go! >>', class: 'left' %>
+    <% end %>
+  </div>
+</li>

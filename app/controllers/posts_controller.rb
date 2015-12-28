@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :check_emails, only: [:home, :index]
+  before_action :prepare_commenting, only: [:home, :index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   def home
@@ -41,6 +42,10 @@ class PostsController < ApplicationController
   
   def set_post
     @post = Post.find(params[:id])
+  end
+  
+  def prepare_commenting
+    @post
   end
   
   def check_emails

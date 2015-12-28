@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :check_emails, only: [:home, :index]
+  before_action :prepare_commenting, only: [:home, :index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   def home
@@ -43,6 +44,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
   
+  def prepare_commenting
+    @post
+  end
+  
   def check_emails
     @emails = []
     Gmail.connect('feliks.montez', 'Inten$1ty()') do |gmail|
@@ -61,12 +66,12 @@ class PostsController < ApplicationController
     emails.each do |email|
       author = email.from[0].name.chomp
       number = author.gsub(/\D/, '')
-      byebug
       if number.length == 10
         @user = User.find_by(phone_number: number)
         if @user && @user.author
           body = email.body.decoded.gsub(/[\w\W]*Content-Type:\stext\/plain.*?\n\n/, '').gsub(/\n\n--[\w\W]*--/, '').chomp
           heading, body = body.split('*body*')
+          
           @post = Post.create(heading: heading, body: body, user_id: @user.id)
         end
       end

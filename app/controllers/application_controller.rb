@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user
-    current_user ||= User.find_by(uuid: cookies[:user_uuid])
+    @current_user ||= User.find_by(uuid: cookies[:user_uuid])
   end
   
   def sign_out

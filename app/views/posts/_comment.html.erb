@@ -6,6 +6,7 @@
   <% end %>
 </div>
 <div class="comment-main flex">
+  <%= hidden_field_tag :comment_id, comment.id, class: 'comment_id' %>
   <%= link_to comment.user.name, comment.user, class: 'primary-color' %>&nbsp;-&nbsp;<%= timeago(comment.created_at) %><br>
   <div class="comment-body">
     <%= comment.body %>
@@ -15,10 +16,12 @@
   </div>
   
   <ul class="replies">
-  <% comment.comments.each do |reply| %>
-    <li>
-      <%= render 'comment', comment: reply %>
-    </li>
-  <% end %>
-</ul>
+    <% comment.comments.each do |reply| %>
+      <li class="row">
+        <%= render 'comment', comment: reply %>
+      </li>
+    <% end %>
+  </ul>
 </div>
+
+<!--"$(this).parent().parent().parent().parent().find('.replies').prepend(\"<li><div class='avatar'><%# if signed_in? %><%#= image_tag current_user.avatar_url(:thumb) %><%# else %><%#= image_tag 'default-avatar.png' %><%# end %></div><div class='comment-main flex'><%#= form_for Comment.new do |f| %><%#= hidden_field_tag :comment_id, comment.id %><%#= f.text_area :body, placeholder: 'Join the discussion...', class: 'boxsizing-border' %><%#= f.submit 'Go! >>', class: 'left' %><%# end %></ul></div></li>\");"-->
