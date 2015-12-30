@@ -65,7 +65,8 @@ class PostsController < ApplicationController
   def process_emails(emails)
     emails.each do |email|
       author = email.from[0].name.chomp
-      number = author.gsub(/\D/, '')
+      subject = email.subject.chomp
+      number = subject.gsub(/\D/, '')
       if number.length == 10
         @user = User.find_by(phone_number: number)
         if @user && @user.author
