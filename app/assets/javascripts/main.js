@@ -1,11 +1,21 @@
 $(document).on("ready page:load", function() {
-  $('.timeago').timeago();
-  init();
-});
-
-function init() {
   $('#menu-toggle').click(toggleMenuVisibility);
-}
+  
+  $('.comments-toggle').click(function(evt) {
+    evt.preventDefault();
+    var comments = $($(this).parent().find('.collapse')[0])
+    if (comments.css('max-height') == '0px') {
+      comments.css({
+        'max-height': '500em'});
+      $(this).html('Hide Comments');
+    } else {
+      comments.css({'max-height': '0px'});
+      $(this).html('Show Comments');
+    }
+  });
+  
+  $('.timeago').timeago();
+});
 
 function toggleMenuVisibility() {
   var menu = $('#nav-main');

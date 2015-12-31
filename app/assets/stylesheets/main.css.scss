@@ -154,9 +154,9 @@ p.no-indent {
 
 #giant-brand {
   float: left;
-  font-size: 5em;
+  font-size: 3em;
   max-height: 2em;
-  padding: 0.4em 0 0.2em 0;
+  padding: 1em 0 1em 0;
   line-height: 3em;
   margin: 0;
   text-align: left;
@@ -300,6 +300,15 @@ p.no-indent {
   display: none;
 }
 
+.collapse {
+  max-height: 0;
+  overflow: hidden;
+  
+  -webkit-transition: max-height 0.8s;
+     -moz-transition: max-height 0.8s;
+          transition: max-height 0.8s;
+}
+
 .author-byline {
   box-sizing: border-box;
   background: url(image_path('5x5-grey-diag.png'));
@@ -313,6 +322,10 @@ p.no-indent {
   font-weight: 700;
   font-size: 0.8em;
   letter-spacing: 1px;
+}
+
+.posts > li:not(:first-child) {
+  margin-top: 4em;
 }
 
 .primary-color {

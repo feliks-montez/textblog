@@ -1,38 +1,41 @@
 <section class="comments">
-  <h2>Comments</h2>
-  <ul class="no-list-style">
-    <li class="row">
-      <div class="avatar">
-        <% if signed_in? %>
-          <%= image_tag current_user.avatar_url(:thumb) %>
-        <% else %>
-          <%= image_tag 'default-avatar.png' %>
-        <% end %>
-      </div>
-      <div class="comment-main flex">
-        <%= form_for Comment.new do |f| %>
-          <%= hidden_field_tag :post_id, post.id %>
-          
-          <%= f.text_area :body, placeholder: "Join the discussion...", class: 'boxsizing-border' %>
-          
-          <%= f.submit 'Go! >>', class: 'left' %>
-        <% end %>
-      </div>
-    </li>
-    <% post.comments.each do |comment| %>
+  <%= link_to 'Show Comments', '#', class: 'comments-toggle' %>
+  <div class="collapse">
+    <h2>Comments</h2>
+    <ul class="no-list-style">
       <li class="row">
-        <%= render 'comment', comment: comment %>
+        <div class="avatar">
+          <% if signed_in? %>
+            <%= image_tag current_user.avatar_url(:thumb) %>
+          <% else %>
+            <%= image_tag 'default-avatar.png' %>
+          <% end %>
+        </div>
+        <div class="comment-main flex">
+          <%= form_for Comment.new do |f| %>
+            <%= hidden_field_tag :post_id, post.id %>
+            
+            <%= f.text_area :body, placeholder: "Join the discussion...", class: 'boxsizing-border' %>
+            
+            <%= f.submit 'Go! >>', class: 'left' %>
+          <% end %>
+        </div>
       </li>
-    <% end %>
-  </ul>
-  
-  <script type="text/javascript">
-    $('a.reply').click(function(evt) {
-      evt.preventDefault();
-      var comment_id = $(this).parent().parent().find('.comment_id').attr('value');
-      var data = "<%= escape_javascript(render :partial => 'comments/reply') %>";
-      $($(this).parent().parent().find('.replies')[0]).prepend(data);
-      $($(this).parent().parent().find('.replies')[0]).find('input[name="comment_id"]').attr('value', comment_id);
-    });
-  </script>
+      <% post.comments.each do |comment| %>
+        <li class="row">
+          <%= render 'comment', comment: comment %>
+        </li>
+      <% end %>
+    </ul>
+    
+    <script type="text/javascript">
+      $('a.reply').click(function(evt) {
+        evt.preventDefault();
+        var comment_id = $(this).parent().parent().find('.comment_id').attr('value');
+        var data = "<%= escape_javascript(render :partial => 'comments/reply') %>";
+        $($(this).parent().parent().find('.replies')[0]).prepend(data);
+        $($(this).parent().parent().find('.replies')[0]).find('input[name="comment_id"]').attr('value', comment_id);
+      });
+    </script>
+  </div>
 </section>

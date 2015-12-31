@@ -1,7 +1,7 @@
 <footer id="footer-main">
-  <div id="footer-inner">
+  <div>
     <%= image_tag 'anvil.png' %>
-    <section>
+    <section style="margin-top: 0;">
       <ul>
         <li><%= link_to 'Our Community', users_path %></li>
         <li><%= link_to 'Our Authors', authors_path %></li>
