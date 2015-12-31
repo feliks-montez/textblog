@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   end
   
   def redirect_incorrect_users
-    if !@user == current_user
+    if @user != current_user
       redirect_to current_user
     end
   end

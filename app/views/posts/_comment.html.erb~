@@ -7,8 +7,6 @@
 </div>
 <div class="comment-main flex">
   <%= hidden_field_tag :comment_id, comment.id, class: 'comment_id' %>
-  <input name="utf8" type="hidden" value="✓">
-  <%= hidden_field_tag :comment_id, comment.id, class: 'comment_id' %>
   <%= link_to comment.user.name, comment.user, class: 'primary-color' %>&nbsp;-&nbsp;<%= timeago(comment.created_at) %><br>
   <div class="comment-body">
     <%= comment.body %>

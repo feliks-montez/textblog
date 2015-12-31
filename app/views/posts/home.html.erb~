@@ -3,6 +3,7 @@
     <li>
       <%= render 'post', post: post if post %>
     </li>
+  <% end %>
 </ul>
 
 <% content_for :aside do %>

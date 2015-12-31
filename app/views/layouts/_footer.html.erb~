@@ -1,9 +1,9 @@
 <footer id="footer-main">
-  <div>
+  <div id="footer-inner">
     <%= image_tag 'anvil.png' %>
     <section>
       <ul>
-        <li><%= link_to 'Our Comminuty', users_path %></li>
+        <li><%= link_to 'Our Community', users_path %></li>
         <li><%= link_to 'Our Authors', authors_path %></li>
         <li><%= link_to 'Posts', posts_path %></li>
         <li><%= link_to 'Sign In', signin_path %></li>

@@ -17,6 +17,10 @@
   }
 }
 
+.posts {
+  list-style: none;
+}
+
 .comments {
   clear: both;
 }

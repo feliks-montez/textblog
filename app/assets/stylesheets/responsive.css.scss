@@ -8,9 +8,11 @@
   }
 
   #giant-brand {
+    vertical-align: middle;
     font-size: 3em;
     line-height: 1em;
-    margin: 0;
+    margin: 0.5em 0;
+    padding: 0;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
@@ -48,7 +50,23 @@
   }
   
   #wrapper {
+    box-sizing: border-box;
+    width: 100%;
     padding: 1em;
+    flex-flow: column;
+  }
+  
+  #section-main {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  #aside-main {
+    margin-left: 0;
+  }
+  
+  #footer-main > div {
+    padding: 0 1em;
   }
 }
 

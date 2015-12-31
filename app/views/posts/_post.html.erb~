@@ -1,10 +1,10 @@
 <article class="clearfix">
-  <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+  <p class="date"><%= post.created_at.strftime("%H:%M %B %d, %Y") %></p>
   <h1><%= post.heading %></h1>
   <div class="author-byline">
     <span>By <%= link_to post.user.name, post.user %></span>
   </div>
-  <p><%= post.body %></p>
+  <p><%= markdown(post.body) %></p>
   <div class="about-author">
     <h3>About the Author</h3>
     <div class="avatar">
