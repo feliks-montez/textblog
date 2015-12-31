@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   
   def check_emails
     @emails = []
-    Gmail.connect('feliks.montez', 'Inten$1ty()') do |gmail|
+    Gmail.connect(ENV["GMAIL_USERNAME"], ENV["GMAIL_PASSWORD"]) do |gmail|
       gmail.inbox.find(:unread).each do |email|
         email.read!
         if email.subject =~ /SMS/ or email.subject =~ /voicemail/

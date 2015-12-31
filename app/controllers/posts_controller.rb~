@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to posts_path
     else
-      render 'new'
+      render 'edit'
     end
   end
   
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   
   def check_emails
     @emails = []
-    Gmail.connect('feliks.montez', 'Inten$1ty()') do |gmail|
+    Gmail.connect(ENV["GMAIL_USERNAME"], ENV["GMAIL_PASSWORD"]) do |gmail|
       gmail.inbox.find(:unread).each do |email|
         email.read!
         if email.subject =~ /SMS/ or email.subject =~ /voicemail/
