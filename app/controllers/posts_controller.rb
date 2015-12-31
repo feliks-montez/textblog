@@ -20,8 +20,8 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(params.require(:post).permit(:heading,:body))
-    @post.user = User.find(1)
+    @post = Post.new(post_params)
+    @post.user = current_user
     if @post.save
       redirect_to posts_path
     else
@@ -33,12 +33,21 @@ class PostsController < ApplicationController
   end
   
   def update
+    if @post.update(post_params)
+      redirect_to posts_path
+    else
+      render 'new'
+    end
   end
   
   def destroy
   end
   
   private
+  
+  def post_params
+    params.require(:post).permit(:heading,:body)
+  end
   
   def set_post
     @post = Post.find(params[:id])

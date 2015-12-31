@@ -4,7 +4,7 @@
   <div class="author-byline">
     <span>By <%= link_to post.user.name, post.user %></span>
   </div>
-  <p><%= post.body %></p>
+  <p><%= markdown(post.body) %></p>
   <div class="about-author">
     <h3>About the Author</h3>
     <div class="avatar">
