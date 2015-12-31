@@ -30,7 +30,7 @@ ul, ol {
 
 .no-list-style {
   list-style: none;
-  padding-left: 0;
+  margin-left: 0;
 }
 
 nav ul, nav ol {
@@ -194,7 +194,6 @@ p.no-indent {
 #nav-main > ul {
   max-width: 1024px;
   margin: 0 auto;
-  margin-left: 0;
 }
 
 #nav-main > ul > li {
@@ -225,6 +224,7 @@ p.no-indent {
   background: $light-color;
   width: inherit;
   min-width: 95%;
+  margin-left: 0;
 }
 
 #nav-main li:hover ul {
@@ -294,6 +294,10 @@ p.no-indent {
       }
     }
   }
+}
+
+.mobile-hide {
+  
 }
 
 .author-byline {

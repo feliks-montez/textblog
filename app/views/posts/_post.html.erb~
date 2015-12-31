@@ -1,5 +1,5 @@
 <article class="clearfix">
-  <p class="date"><%= post.created_at.strftime("%H:%M %B %d, %Y") %></p>
+  <p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
   <h1><%= post.heading %></h1>
   <div class="author-byline">
     <span>By <%= link_to post.user.name, post.user %></span>
@@ -10,7 +10,7 @@
     <div class="avatar">
       <%= image_tag post.user.avatar_url(:small) %>
     </div>
-    <p class="no-indent"><%= link_to post.user.name, post.user %> - <%= post.user.description %></p>
+    <p class="no-indent"><%= link_to post.user.name, post.user %><span class="mobile-hide"> - <%= post.user.description %></span></p>
   </div>
   
   <%= render 'comments', post: post %>

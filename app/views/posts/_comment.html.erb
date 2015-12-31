@@ -15,7 +15,7 @@
     <%= link_to 'Reply', '#', class: 'grey reply' %>
   </div>
   
-  <ul class="replies">
+  <ul class="replies no-list-style">
     <% comment.comments.each do |reply| %>
       <li class="row">
         <%= render 'comment', comment: reply %>

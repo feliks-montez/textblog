@@ -30,7 +30,7 @@ ul, ol {
 
 .no-list-style {
   list-style: none;
-  padding-left: 0;
+  margin-left: 0;
 }
 
 nav ul, nav ol {
@@ -294,6 +294,10 @@ p.no-indent {
       }
     }
   }
+}
+
+.mobile-hide {
+  display: none;
 }
 
 .author-byline {

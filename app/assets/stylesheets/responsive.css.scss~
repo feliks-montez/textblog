@@ -72,6 +72,10 @@
   #footer-main > div {
     padding: 0 1em;
   }
+  
+  .posts > li:not(:first-child) {
+    margin-top: 4em;
+  }
 }
 
 @media screen and (min-width: 50em) {
