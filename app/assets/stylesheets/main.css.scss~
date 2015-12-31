@@ -194,6 +194,7 @@ p.no-indent {
 #nav-main > ul {
   max-width: 1024px;
   margin: 0 auto;
+  margin-left: 0;
 }
 
 #nav-main > ul > li {

@@ -35,8 +35,12 @@
     float: none;
   }
   
-  #nav-main > ul > li > a {
-    color: #6699ff;
+  #nav-main > ul > li:first-child {
+    margin-left: 0;
+  }
+  
+  #nav-main ul li a:active {
+    text-decoration: underline;
   }
   
   #nav-main li ul {
@@ -66,7 +70,7 @@
   }
   
   #footer-main > div {
-    padding-left: 1em;
+    padding: 0 1em;
   }
 }
 
