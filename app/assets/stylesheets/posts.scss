@@ -17,8 +17,16 @@
   }
 }
 
+.posts {
+  list-style: none;
+}
+
 .comments {
   clear: both;
+}
+
+.comments > ul {
+  list-style: none;
 }
 
 .comments li {

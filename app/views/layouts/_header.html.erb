@@ -1,6 +1,9 @@
 <header id="header-main">
   <div id="logo-container" class="clearfix">
-    <%= link_to root_path do %><h1 id="giant-brand" class="">Text Blog</h1><% end %>
+    <%= link_to root_path do %>
+      <!--<h1 id="giant-brand" class="">TheForge</h1>-->
+      <%= image_tag 'logo.png', id: 'giant-brand' %>
+    <% end %>
     <div id="menu-toggle">
       <%= image_tag 'menu-black.png', class: 'btn-nav' %>
     </div>
@@ -9,15 +12,6 @@
     <ul class="clearfix">
       <li class="has-drop-nav">
         <%= link_to 'Posts', posts_path %>
-      </li>
-      
-      <li class="has-drop-nav">
-        <a href="#">adipiscing</a>
-        <ul class="drop-nav">
-          <li class="first"><a href="#" class="first">elit</a></li>
-          <li class="last"><a href="#" class="last">Quisque</a></li>
-          <li class="last"><a href="#" class="last">Nullam</a></li>
-        </ul>
       </li>
       
       <% if current_user.author %>
@@ -30,8 +24,6 @@
         <% if signed_in? %>
           <%= link_to 'My Profile', current_user %>
           <ul class="drop-nav">
-            <li class="first"><a href="#" class="first">neque</a></li>
-            <li class=""><a href="#" class="">Curabitur</a></li>
             <li class="last"><%= link_to 'Sign Out', signout_path %></li>
           </ul>
         <% else %>

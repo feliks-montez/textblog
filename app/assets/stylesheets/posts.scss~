@@ -21,11 +21,15 @@
   clear: both;
 }
 
+.comments > ul {
+  list-style: none;
+}
+
 .comments li {
   margin: 1em 0;
   
   .comment-main {
-      
+    
   }
   
   .comment-body {

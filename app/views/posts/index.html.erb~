@@ -6,7 +6,7 @@
       <%= link_to post do %>
         <h2><%= post.heading %></h2>
       <% end %>
-      <p class="indent">By <%= link_to post.user.fname+' '+post.user.lname, post.user %></p>-->
+      <p class="indent">By <%= link_to post.user.name, post.user %></p>-->
     </li>
   <% end %>
 </ul>

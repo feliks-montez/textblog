@@ -1,6 +1,6 @@
 $background-color: #fff;
-$primary-color: #3366ff;
-$secondary-color: #3366ff;
+$primary-color: #f60;
+$secondary-color: #f60;
 $light-color: #eee;
 $grey: #aaa;
 $dark-color: #222;
@@ -24,7 +24,7 @@ body {
 }
 
 ul, ol { 
-  list-style: none;
+  list-style-type: disc;
 }
 
 nav ul, nav ol {
@@ -148,7 +148,9 @@ p.no-indent {
 
 #giant-brand {
   float: left;
-  font-size: 4em;
+  font-size: 5em;
+  max-height: 1em;
+  padding: 0.6em 0;
   line-height: 3em;
   margin: 0;
   text-align: left;
@@ -163,6 +165,10 @@ p.no-indent {
 #header-main {
   background: $light-color;
   margin-bottom: 1em;
+  
+  ul {
+    list-style: none; 
+  }
 }
 
 #nav-main {
