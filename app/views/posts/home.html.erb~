@@ -1,10 +1,15 @@
-<%= render 'post', post: @post %>
+<ul class="no-list-style">
+  <% @posts.each do |post| %>
+    <li>
+      <%= render 'post', post: post if post %>
+    </li>
+</ul>
 
 <% content_for :aside do %>
   <aside id="aside-main">
     <h2>Latest Posts</h2>
-    <ul>
-      <% @posts.each do |post| %>
+    <ul class="no-list-style">
+      <% @recent_posts.each do |post| %>
         <li>
           <%= link_to post do %><h3><%= post.heading %></h3><% end %>
         </li>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   get 'signup' => 'users#new', as: 'signup'
   
+  get '/authors' => 'users#authors', as: 'authors'
+  
   resources :users
   resources :posts do
     resources :comments

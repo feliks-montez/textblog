@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   def home
-    @post = Post.first
-    @posts = Post.limit(5)
+    @posts = Post.first
+    @recent_posts = Post.offset(3).limit(10)
   end
   
   def index

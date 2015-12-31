@@ -24,7 +24,11 @@ body {
 }
 
 ul, ol { 
-  list-style-type: armenian;
+  list-style-type: disc;
+}
+
+.no-list-style {
+  list-style: none;
 }
 
 nav ul, nav ol {

@@ -1,0 +1,10 @@
+<ul class="no-list-style">
+  <% users.each do |user| %>
+    <li class="row">
+      <div class="avatar">
+        <%= image_tag user.avatar_url(:thumb) %>
+      </div>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>

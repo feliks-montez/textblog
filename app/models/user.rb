@@ -20,4 +20,7 @@ class User < ActiveRecord::Base
   def full_name
     fname + ' ' + lname
   end
+  
+  scope :authors, -> { where(author: true) }
+  scope :registered, -> { where("email IS NOT NULL") }
 end

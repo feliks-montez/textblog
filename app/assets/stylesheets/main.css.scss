@@ -27,6 +27,10 @@ ul, ol {
   list-style-type: disc;
 }
 
+.no-list-style {
+  list-style: none;
+}
+
 nav ul, nav ol {
   padding: 0;
 }
