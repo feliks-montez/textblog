@@ -104,7 +104,6 @@ GEM
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     oauth (0.4.7)
-    pg (0.18.1)
     puma (2.15.3)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -198,7 +197,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mail
-  pg
   puma
   rails (= 4.2.0)
   rails_12factor
