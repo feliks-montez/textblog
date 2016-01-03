@@ -1,7 +1,7 @@
 <ul class="posts no-list-style">
   <% @posts.each do |post| %>
     <li>
-      <%= render 'post', post: post if post %>
+      <%= render 'post', post: post, comments_hidden: true %>
     </li>
   <% end %>
 </ul>

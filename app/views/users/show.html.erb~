@@ -4,14 +4,54 @@
     | <%= link_to 'Edit', edit_user_path(@user) %>
   <% end %>
 </h1>
-<div class="avatar avatar-lg left">
-  <% if @user.avatar_url() %>
-    <%= image_tag @user.avatar_url(:medium) %>
+
+<div class="row">
+  <div class="avatar avatar-lg left">
+    <% if @user.avatar_url() %>
+      <%= image_tag @user.avatar_url(:medium) %>
+    <% end %>
+  </div>
+  <p class="left">
+    Email: <%= @user.email %><br>
+    Name: <%= @user.name %><br>
+    Phone number: <%= number_to_phone(@user.phone_number, area_code: true) %><br>
+    About me: <%= @user.description %>
+  </p>
+</div><br>
+
+<div class="row">
+  <div class="col">
+    <h3>Responses</h3>
+    <ul class="no-list-style indent">
+      <% @messages.each do |message| %>
+        <li>
+          <%= markdown(message.body) %>
+        </li>
+      <% end %>
+    </ul>
+  </div><br>
+
+  <% if @user.author %>
+    <div class="col">
+      <h3>Recent Posts</h3>
+      <ul class="no-list-style indent">
+        <% @recent_posts.each do |post| %>
+          <li>
+            <%= link_to post.heading, post %>
+          </li>
+        <% end %>
+      </ul>
+    </div></br>
   <% end %>
+
+  <div class="col">
+    <h3>Recent Comments</h3>
+    <ul class="no-list-style indent">
+      <% @recent_comments.each do |comment| %>
+        <li>
+          <%= comment.body %> <%= link_to "(See post)", comment.post %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
-<p class="left">
-  Email: <%= @user.email %><br>
-  Name: <%= @user.name %><br>
-  Phone number: <%= number_to_phone(@user.phone_number, area_code: true) %><br>
-  About me: <%= @user.description %>
-</p>

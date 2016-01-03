@@ -9,9 +9,9 @@
 
   #giant-brand {
     vertical-align: middle;
-    font-size: 3em;
+    font-size: 1.5em;
     line-height: 1em;
-    margin: 0.5em 0;
+    margin: 1em 0;
     padding: 0;
     position: absolute;
     top: 50%;
@@ -56,6 +56,7 @@
   #wrapper {
     box-sizing: border-box;
     width: 100%;
+    max-width: 100%;
     padding: 1em;
     flex-flow: column;
   }
@@ -71,7 +72,7 @@
   
   #footer-main img {
     width: 6em;
-    height: auto;
+    height: 6em;
   }
   
   #footer-main > div {
@@ -80,6 +81,10 @@
   
   .posts > li:not(:first-child) {
     margin-top: 4em;
+  }
+  
+  .mobile-hide {
+    display: none;
   }
 }
 

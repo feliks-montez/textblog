@@ -1,3 +1,4 @@
+<a name="comment-<%= comment.id %>"></a>
 <div class="avatar">
   <% if comment.user.avatar_url %>
     <%= image_tag comment.user.avatar_url(:thumb) %>
@@ -15,7 +16,7 @@
     <%= link_to 'Reply', '#', class: 'grey reply' %>
   </div>
   
-  <ul class="replies">
+  <ul class="replies no-list-style">
     <% comment.comments.each do |reply| %>
       <li class="row">
         <%= render 'comment', comment: reply %>

@@ -1,7 +1,7 @@
 <ul class="posts no-list-style">
   <% @posts.each do |post| %>
     <li>
-      <%= render 'post', post: post %>
+      <%= render 'post', post: post, comments_hidden: true %>
       <!--<p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
       <%= link_to post do %>
         <h2><%= post.heading %></h2>

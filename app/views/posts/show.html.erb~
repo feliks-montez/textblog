@@ -1,1 +1,1 @@
-<%= render 'post',  %>
+<%= render 'post', post: @post, hidden: false %>

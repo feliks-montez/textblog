@@ -12,6 +12,9 @@
     </div>
     <p class="no-indent"><%= link_to post.user.name, post.user %><span class="mobile-hide"> - <%= post.user.description %></span></p>
   </div>
-  
-  <%= render 'comments', post: post %>
+  <% if !comments_hidden.nil? and comments_hidden %>
+    <%= render 'comments', post: post, hidden: true %>
+  <% else %>
+    <%= render 'comments', post: post, hidden: false %>
+  <% end %>
 </article>

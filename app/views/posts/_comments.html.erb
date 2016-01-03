@@ -1,6 +1,8 @@
 <section class="comments">
-  <%= link_to 'Show Comments', '#', class: 'comments-toggle' %>
-  <div class="collapse">
+  <% if hidden %>
+    <%= link_to 'Show Comments', '#', class: 'comments-toggle' %>
+    <div class="collapse uncollapse">
+  <% end %>
     <h2>Comments</h2>
     <ul class="no-list-style">
       <li class="row">
@@ -37,5 +39,7 @@
         $($(this).parent().parent().find('.replies')[0]).find('input[name="comment_id"]').attr('value', comment_id);
       });
     </script>
-  </div>
+  <% if hidden %>
+    </div>
+  <% end %>
 </section>

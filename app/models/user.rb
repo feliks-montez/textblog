@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :posts
   has_many :comments
+  has_many :messages
   
   mount_uploader :avatar, ImageUploader
   
@@ -24,3 +25,5 @@ class User < ActiveRecord::Base
   scope :authors, -> { where(author: true) }
   scope :registered, -> { where("email IS NOT NULL") }
 end
+
+# A user has a list of responses. So comments must have a recipient_id (or access .commentable.user_id somehow?)

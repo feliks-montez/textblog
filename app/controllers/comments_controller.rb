@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
      
     if @comment.save
+      message_body = "["+@comment.user.name+"]("+user_path(@comment.user)+") commented on your [post]("+post_path(@comment.post)+"#comment-"+@comment.id.to_s+")" if @comment.commentable.is_a? Post
+      message_body = "["+@comment.user.name+"]("+user_path(@comment.user)+") replied to your [comment]("+post_path(@comment.post)+"#comment-"+@comment.id.to_s+")" if @comment.commentable.is_a? Comment
+      Message.create(recipient_id: @parent.user_id, body: message_body)
       redirect_to @comment.post
     else
       redirect_to @parent
