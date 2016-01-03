@@ -1,0 +1,45 @@
+<% environment.context_class.instance_eval { include Rails.application.routes.url_helpers } %>
+
+$(document).on("ready page:load", function() {
+  $('#menu-toggle').click(toggleMenuVisibility);
+  
+  $('.comments-toggle').click(function(evt) {
+    evt.preventDefault();
+    var comments = $($(this).parent().find('.collapse')[0])
+    if (comments.css('max-height') == '0px') {
+      comments.css({
+        'max-height': '500em'});
+      $(this).html('Hide Comments');
+    } else {
+      comments.css({'max-height': '0px'});
+      $(this).html('Show Comments');
+    }
+  });
+  
+  $('a').click(function(evt) {
+    var href = $(this).attr('href');
+    if(href.indexOf('#comment') != -1) {
+      evt.preventDefault();
+      var message_id = $(this).parent().parent().attr('name');
+      $.ajax({
+        type: "GET",
+        url: "/messages/"+message_id+"/view",
+        success: function(result){
+          // result has the returned html
+      }});
+      window.location.replace(href);
+    }
+  });
+  
+  $('.timeago').timeago();
+});
+
+function toggleMenuVisibility() {
+  var menu = $('#nav-main');
+  if (menu.css('max-height') == '0px') {
+    menu.css({
+      'max-height': '1000px'});
+  } else {
+    menu.css({'max-height': '0px'});
+  }
+}

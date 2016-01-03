@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def show
     @recent_posts = Post.where(user_id: current_user.id).limit(5)
     @recent_comments = Comment.where(user_id: current_user.id).limit(5)
-    @messages = Message.where(recipient_id: current_user.id)
+    @messages = Message.where(recipient_id: current_user.id).where(viewed: false)
   end
 
   def new

@@ -349,7 +349,7 @@ ul.indent, ol.indent {
   flex-flow: row;
 }
 
-.row > div:not(:first-child) {
+.row > div:not(:first-child), .row > section:not(:first-child) {
   margin-left: 1em;
 }
 

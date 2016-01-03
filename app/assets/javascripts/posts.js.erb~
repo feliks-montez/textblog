@@ -1,10 +1,15 @@
+<% environment.context_class.instance_eval { include Rails.application.routes.url_helpers } %>
+
 $(document).on("ready page:load", function() {
-  $('a.reply').click(function(evt) {
-    evt.preventDefault();
-    var comment_id = $(this).parent().parent().find('.comment_id').attr('value')
-    var token = $("meta[name='csrf-token']").attr("content");
-    //var data = '<li class="row"><div class="avatar"><%# if signed_in? %><%#= image_tag current_user.avatar_url(:thumb) %><%# else %><%#= image_tag "default-avatar.png" %><%# end %></div><div class="comment-main flex"><form action="<%= comments_path %>" method="post" accept-charset="UTF-8"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="'+token+'" /><input type="hidden" name="comment_id" value="'+comment_id+'"><textarea placeholder="Join the discussion..." class="boxsizing-border" name="comment[body]" id="comment_body"></textarea><%#= submit_tag "Go! >>", class: "left" %></form></ul></div></li>';
-    //var data = "<%#= escape_javascript(render :partial => 'comments/reply') %>";
-    //$($(this).parent().parent().find('.replies')[0]).prepend(data);
+  $('a').click(function(evt) {
+    var href = this.attr('href');
+    if(href.indexOf('#comment') != -1) {
+      evt.preventDefault();
+      var comment_id = href.split('#comment-')[1];
+      $.ajax({url: "<%= destroy_comment_path(0) %>".replace("0", comment_id), success: function(result){
+          // result has the returned html
+          window.location.replace(href);
+      }});
+    }
   });
 });

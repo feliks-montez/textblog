@@ -3,4 +3,9 @@ class Message < ActiveRecord::Base
   
   validates :recipient_id, presence: true
   validates :body,         presence: true
+  
+  def set_viewed
+    viewed = false;
+    return true
+  end
 end

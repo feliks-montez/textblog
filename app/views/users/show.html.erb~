@@ -11,28 +11,30 @@
       <%= image_tag @user.avatar_url(:medium) %>
     <% end %>
   </div>
-  <p class="left">
-    Email: <%= @user.email %><br>
-    Name: <%= @user.name %><br>
-    Phone number: <%= number_to_phone(@user.phone_number, area_code: true) %><br>
-    About me: <%= @user.description %>
-  </p>
+  <div>
+    <p class="left">
+      Email: <%= @user.email %><br>
+      Name: <%= @user.name %><br>
+      Phone number: <%= number_to_phone(@user.phone_number, area_code: true) %><br>
+      About me: <%= @user.description %>
+    </p>
+  </div>
 </div><br>
 
 <div class="row">
-  <div class="col">
+  <section class="col">
     <h3>Responses</h3>
     <ul class="no-list-style indent">
       <% @messages.each do |message| %>
-        <li>
+        <li name="<%= message.id %>">
           <%= markdown(message.body) %>
         </li>
       <% end %>
     </ul>
-  </div><br>
+  </section>
 
   <% if @user.author %>
-    <div class="col">
+    <section class="col">
       <h3>Recent Posts</h3>
       <ul class="no-list-style indent">
         <% @recent_posts.each do |post| %>
@@ -41,10 +43,10 @@
           </li>
         <% end %>
       </ul>
-    </div></br>
+    </section>
   <% end %>
 
-  <div class="col">
+  <section class="col">
     <h3>Recent Comments</h3>
     <ul class="no-list-style indent">
       <% @recent_comments.each do |comment| %>
@@ -53,5 +55,5 @@
         </li>
       <% end %>
     </ul>
-  </div>
+  </section>
 </div>
