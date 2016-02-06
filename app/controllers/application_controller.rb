@@ -38,4 +38,16 @@ class ApplicationController < ActionController::Base
   def sign_out
     cookies.delete(:user_uuid)
   end
+  
+  def redirect_anonymous_users
+    if !signed_in?
+      redirect_to signin_path
+    end
+  end
+  
+  def redirect_nonauthor_users
+    if !current_user.author
+      redirect_to root_path
+    end
+  end
 end

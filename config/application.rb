@@ -25,13 +25,6 @@ module Textblog
     config.active_record.raise_in_transactional_callbacks = true
     
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    
-    Mail.defaults do
-      retriever_method :pop3, :address    => "pop.gmail.com",
-                              :port       => 995,
-                              :user_name  => 'feliks.montez',
-                              :password   => 'Inten$1ty()',
-                              :enable_ssl => true
-    end
+    config.time_zone = 'Eastern Time (US & Canada)'
   end
 end

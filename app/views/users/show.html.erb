@@ -13,9 +13,11 @@
   </div>
   <div>
     <p class="left">
+      <% if @user == current_user %>
       Email: <%= @user.email %><br>
       Name: <%= @user.name %><br>
       Phone number: <%= number_to_phone(@user.phone_number, area_code: true) %><br>
+      <% end %>
       About me: <%= @user.description %>
     </p>
   </div>

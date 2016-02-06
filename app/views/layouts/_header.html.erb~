@@ -2,7 +2,7 @@
   <div id="logo-container" class="clearfix">
     <%= link_to root_path, class: 'clearfix' do %>
       <!--<h1 id="giant-brand" class="">TheForge</h1>-->
-      <%= image_tag 'logo-flaming.png', id: 'giant-brand' %>
+      <%= image_tag 'logo.png', id: 'giant-brand' %>
     <% end %>
     <div id="menu-toggle">
       <%= image_tag 'menu-black.png', class: 'btn-nav' %>
@@ -17,6 +17,10 @@
       <% if current_user.author %>
         <li class="has-drop-nav">
           <%= link_to 'New Post', new_post_path %>
+        </li>
+      <% else %
+        <li class="has-drop-nav">
+          <%= link_to 'Submit Content', new_post_path %>
         </li>
       <% end %>
       

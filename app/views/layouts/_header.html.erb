@@ -18,6 +18,10 @@
         <li class="has-drop-nav">
           <%= link_to 'New Post', new_post_path %>
         </li>
+      <% else %>
+        <li class="has-drop-nav">
+          <%= link_to 'Submit Content', new_post_path %>
+        </li>
       <% end %>
       
       <li class="has-drop-nav">

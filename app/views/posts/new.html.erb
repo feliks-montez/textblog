@@ -1,4 +1,10 @@
-<h1>New Post</h1>
+<h1>
+  <% if current_user.author %>
+    New Post
+  <% else %>
+    Submit Content
+  <% end %>
+</h1>
 <%= form_for @post do |f| %>
   <%= f.label :heading %><br>
   <%= f.text_field :heading %><br>
@@ -6,5 +12,6 @@
   <%= f.label :body %><br>
   <%= f.text_area :body %><br>
   
-  <%= f.submit 'Post!' %>
+  <%= f.submit 'Post!' if current_user.author %>
+  <%= f.submit 'Submit Content!' if !current_user.author %>
 <% end %>

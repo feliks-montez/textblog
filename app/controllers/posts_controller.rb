@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :check_emails, only: [:home, :index]
   before_action :prepare_commenting, only: [:home, :index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_anonymous_users, only: [:new]
+  before_action :redirect_nonauthor_users, only: [:create, :edit, :update]
   
   def home
     @posts = Post.limit(3)

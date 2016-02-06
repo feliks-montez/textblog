@@ -32,10 +32,16 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user
-    current_user ||= User.find_by(uuid: cookies[:user_uuid])
+    @current_user ||= User.find_by(uuid: cookies[:user_uuid])
   end
   
   def sign_out
     cookies.delete(:user_uuid)
+  end
+  
+  def redirect_anonymous_users
+    if !signed_in?
+      redirect_to signin_path
+    end
   end
 end
